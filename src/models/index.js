@@ -13,19 +13,19 @@ const {
 } = require("sequelize");
 
 
-let sequelizeOptions =
-    process.env.NODE_ENV === "production" ?
-    {
-        dialect: 'postgres',
-        protocol: 'postgres',
-        dialectOptions: {
-            // ssl: {
-            //     require: true,
-            //     rejectUnauthorized: false
-            // },
-            // native: true
-        }
-    } : {};
+let sequelizeOptions ={}
+    // process.env.NODE_ENV === "production" ?
+    // {
+    //     dialect: 'postgres',
+    //     protocol: 'postgres',
+    //     dialectOptions: {
+    //         // ssl: {
+    //         //     require: true,
+    //         //     rejectUnauthorized: false
+    //         // },
+    //         // native: true
+    //     }
+    // } : {};
 
 let sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
 const users = Users(sequelize, DataTypes);
