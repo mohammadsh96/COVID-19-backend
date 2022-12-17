@@ -18,7 +18,7 @@ app.use(errorHandler);
 
 function start(PORT) {
   try {
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
       console.log(`Listen and Running on port ${PORT}`);
     });
   } catch (err) {

@@ -18,7 +18,9 @@ let sequelizeOptions =process.env.NODE_ENV === "production" ?
         dialect: 'postgres',
         protocol: 'postgres',
         port: 5432,
-        host: "127.0.0.1"
+        host: "127.0.0.1",
+     
+        dialectOptions: {},
         // dialectOptions: {
         //     ssl: {
         //         require: true,
