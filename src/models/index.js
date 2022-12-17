@@ -19,11 +19,11 @@ let sequelizeOptions =
         dialect: 'postgres',
         protocol: 'postgres',
         dialectOptions: {
-            ssl: {
-                require: true,
-                rejectUnauthorized: false
-            },
-            native: true
+            // ssl: {
+            //     require: true,
+            //     rejectUnauthorized: false
+            // },
+            // native: true
         }
     } : {};
 
@@ -31,7 +31,7 @@ let sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
 const users = Users(sequelize, DataTypes);
 const records = Records(sequelize, DataTypes);
 
-// Users.hasMany(Products)
+// Users.hasMany(Records)
 users.hasMany(records, {
     foreignKey: "userId",
     sourceKey: "id",
