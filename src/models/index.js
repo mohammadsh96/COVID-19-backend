@@ -13,15 +13,25 @@ const {
 } = require("sequelize");
 
 
-let sequelizeOptions =process.env.NODE_ENV === "production" ?
-    {
-        dialect: 'postgres',
-        protocol: 'postgres',
+let sequelizeOptions={
+    host: 'localhost',
+port: '5434',
+dialect: 'postgres',
+pool: {
+  max: 5,
+  min: 0,
+  idle: 10000
+},
+}
+// let sequelizeOptions =process.env.NODE_ENV === "production" ?
+//     {
+//         dialect: 'postgres',
+//         protocol: 'postgres',
        
      
-        dialectOptions: {},
+//         dialectOptions: {},
         
-    } : {};
+//     } : {};
 
 let sequelize = new Sequelize(POSTGRES_URI,sequelizeOptions);
 const users = Users(sequelize, DataTypes);
