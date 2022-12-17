@@ -1,6 +1,5 @@
 'use strict'; 
 require('dotenv').config();
-const PORT = process.env.PORT || 3030;
 const express = require("express");
 const cors = require('cors')
 const app = express();
@@ -21,9 +20,14 @@ app.use(errorHandler);
 
 
 function start(PORT) {
-    app.listen(PORT, () => {
-        console.log(`Listen and Running on port ${PORT}`);
-    });
+    try{
+
+        app.listen(PORT, () => {
+            console.log(`Listen and Running on port ${PORT}`);
+        });
+    }catch(err){
+console.log(err);
+    }
 }
 
 module.exports = {
