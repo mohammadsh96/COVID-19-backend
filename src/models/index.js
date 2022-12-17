@@ -33,7 +33,7 @@ const {
         
 //     } : {};
 var sequelize = new Sequelize('covid', 'mohammadsh', '0000', {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: '5432',
     dialect: 'postgres',
     pool: {
