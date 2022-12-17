@@ -17,13 +17,13 @@ let sequelizeOptions =process.env.NODE_ENV === "production" ?
     {
         dialect: 'postgres',
         protocol: 'postgres',
-        dialectOptions: {
-            ssl: {
-                require: true,
-                rejectUnauthorized: false
-            },
-            native: true
-        }
+        // dialectOptions: {
+        //     ssl: {
+        //         require: true,
+        //         rejectUnauthorized: false
+        //     },
+        //     native: true
+        // }
     } : {};
 
 let sequelize = new Sequelize("postgres://mohammadsh:0000@localhost:5432/covid",sequelizeOptions);
