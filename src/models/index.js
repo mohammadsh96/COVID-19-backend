@@ -13,7 +13,7 @@ const {
 } = require("sequelize");
 
 
-let sequelizeOptions ={};
+// let sequelizeOptions ={};
     // process.env.NODE_ENV === "production" ?
     // {
     //     dialect: 'postgres',
@@ -27,7 +27,7 @@ let sequelizeOptions ={};
     //     }
     // } : {};
 
-let sequelize = new Sequelize("postgres://mohammadsh:0000@localhost:5432/covid", sequelizeOptions);
+let sequelize = new Sequelize("postgres://mohammadsh:0000@localhost:5432/covid");
 const users = Users(sequelize, DataTypes);
 const records = Records(sequelize, DataTypes);
 
