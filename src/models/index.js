@@ -5,7 +5,7 @@ const Collection = require("./collection");
 const Users = require("./user.model");
 const Records =require('./records')
 
-const POSTGRES_URI = process.env.NODE_ENV === 'test' ? 'sqlite:memory:' : process.env.DATABASE_URL;
+const POSTGRES_URI ='postgresql://postgres:5arkpZPfDoL03S0k9KTZ@containers-us-west-121.railway.app:7708/railway';
 const {
     Sequelize,
     DataTypes
