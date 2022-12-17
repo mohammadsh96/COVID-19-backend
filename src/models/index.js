@@ -5,9 +5,8 @@ const Collection = require("./collection");
 const Users = require("./user.model");
 const Records =require('./records')
 
-const POSTGRES_URI = "postgres://mohammadsh:0000@localhost:5432/covid";
+// const POSTGRES_URI ="postgres://mohammadsh:0000@localhost:5432/covid";
 // const POSTGRES_URI = process.env.NODE_ENV === 'test' ? 'sqlite:memory:' : process.env.DATABASE_URL;
-
 const {
     Sequelize,
     DataTypes
@@ -28,7 +27,7 @@ let sequelizeOptions ={};
     //     }
     // } : {};
 
-let sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
+let sequelize = new Sequelize("postgres://mohammadsh:0000@localhost:5432/covid", sequelizeOptions);
 const users = Users(sequelize, DataTypes);
 const records = Records(sequelize, DataTypes);
 
