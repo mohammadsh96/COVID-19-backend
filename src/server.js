@@ -19,7 +19,7 @@ app.use(errorHandler);
 
 function start(PORT) {
   try {
-    server.listen(PORT, '0.0.0.0')
+    server.listen(PORT)
      } catch (err) {
     console.log(err);
   }
