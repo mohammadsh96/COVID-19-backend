@@ -6,7 +6,7 @@ const Users = require("./user.model");
 const Records =require('./records')
 
 // const POSTGRES_URI ="postgres://mohammadsh:0000@localhost:5432/covid";
-// const POSTGRES_URI = process.env.NODE_ENV === 'test' ? 'sqlite:memory:' : process.env.DATABASE_URL;
+const POSTGRES_URI = process.env.NODE_ENV === 'test' ? 'sqlite:memory:' : process.env.DATABASE_URL;
 const {
     Sequelize,
     DataTypes
@@ -20,16 +20,10 @@ let sequelizeOptions =process.env.NODE_ENV === "production" ?
        
      
         dialectOptions: {},
-        // dialectOptions: {
-        //     ssl: {
-        //         require: true,
-        //         rejectUnauthorized: false
-        //     },
-        //     native: true
-        // }
+        
     } : {};
 
-let sequelize = new Sequelize("postgres://mohammadsh:0000@localhost:5432/covid",sequelizeOptions);
+let sequelize = new Sequelize(POSTGRES_URI,sequelizeOptions);
 const users = Users(sequelize, DataTypes);
 const records = Records(sequelize, DataTypes);
 
