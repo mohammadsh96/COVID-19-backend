@@ -11,27 +11,17 @@ authRouter.post("/signup", async (req, res, next) => {
     console.log(userRecord.token);
     const output = {
       user: userRecord,
-      // token: userRecord.token
-    };
+         };
     res.status(201).json(output);
   } catch (e) {
     next(e.message);
   }
 });
 
-
-
-
-
-
 authRouter.post("/signin", basicAuth, (req, res, next) => {
-
-
   const user = {
     user: req.user,
-
   };
-
   res.status(200).json(user);
 });
 module.exports = authRouter ;

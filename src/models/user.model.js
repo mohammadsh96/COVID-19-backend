@@ -18,25 +18,10 @@ const Users = (sequelize, DataTypes) => {
       allowNull: false,
       
     },
-
-    role: {
-      type: DataTypes.ENUM("user", "admin"),
-      defaultValue: "user",
-    },
-
     token: {
       type: DataTypes.VIRTUAL,
     },
-    capabilities: {
-      type: DataTypes.VIRTUAL,
-      get() {
-        const acl = {
-          user: ["CRUD"],
-          admin: ["CRUD", "CRUD_Users"],
-        };
-        return acl[this.role];
-      },
-    },
+    
   });
 
   model.beforeCreate(async (user) => {
