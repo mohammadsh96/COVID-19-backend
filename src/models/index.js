@@ -23,7 +23,7 @@ let sequelize = new Sequelize(POSTGRES_URI,sequelizeOptions);
 const users = Users(sequelize, DataTypes);
 const records = Records(sequelize, DataTypes);
 
-// Users.hasMany(Records)
+// User hasMany( Records)
 users.hasMany(records, {
     foreignKey: "userId",
     sourceKey: "id",
