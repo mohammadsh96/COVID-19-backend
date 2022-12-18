@@ -23,6 +23,7 @@ function start(PORT) {
     console.log(err);
   }
 }
+
 server.on('listening', function() {
     console.log('Express server started on port %s at %s', server.address().port, server.address().address);
 })
@@ -35,6 +36,7 @@ server.on('error', (e) => {
       }, 1000);
     }
   });
+  
 module.exports = {
   app: app,
   start: start,
