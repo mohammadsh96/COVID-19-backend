@@ -14,7 +14,6 @@ app.use(cors());
 app.use(authRouter);
 app.use(recordsRouter);
 app.use("*", notFoundHandler);
-
 app.use(errorHandler);
 
 function start(PORT) {
@@ -32,7 +31,7 @@ server.on('error', (e) => {
       console.log('Address in use, retrying...');
       setTimeout(() => {
         server.close();
-        server.listen(PORT, HOST);
+        server.listen(8080);
       }, 1000);
     }
   });
