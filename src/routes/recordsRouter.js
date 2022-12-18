@@ -6,7 +6,7 @@ const bearerAuth = require("../middleware/bearer.js");
 
 //home route  links to deploy link
 recordsRouter.get('/',(req,res)=>{
-  res.json({frontend_URL : "https://covid-19-frontend-ashen.vercel.app/"})
+  res.send({frontend_URL : "https://covid-19-frontend-ashen.vercel.app/"})
 })
 // add-to-my-record button will trigger this endpoint
 recordsRouter.post("/addRecord", bearerAuth ,async  (req, res, next) => {
