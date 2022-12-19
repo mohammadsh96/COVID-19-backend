@@ -38,6 +38,5 @@ server.on('error', (e) => {
   });
   
 module.exports = {
-  app: app,
   start: start,
 };
