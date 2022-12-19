@@ -20,7 +20,7 @@ class Collection {
         return data;
       }
     } else {
-      return "you are not the Owner of this product";
+      return "you are not the Owner of this Record";
     }
   }
 
@@ -37,7 +37,7 @@ class Collection {
         if (data) {
           return data;
         } else {
-          let err = "sorry, we cannot find this post";
+          let err = "sorry, we cannot find this Record";
           return err;
         }
       }
